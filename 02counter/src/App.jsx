@@ -20,8 +20,10 @@ const addValue =  () =>{
 const removeValue = () => {
   if(counter>=0){
 
-    setCounter(counter)
-    counter= counter - 1;
+    setCounter(counter - 1)
+    setCounter(counter - 1)
+    setCounter(counter - 1)
+    // counter= counter - 1;
     console.log("value of counter is counter" , counter);
   }
 }
