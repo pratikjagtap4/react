@@ -2,3 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+.full{
+  height: 90vh;
+  width: 90vw;
+  margin: 0;
+}
+
+.buttons{
+  display: flex;
+  align-items: baseline ;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: white;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.btn{
+  background: red;
+  border: 1px solid black ;
+  padding: 2px 10px;
+  border-radius: 15px;
+}
+
+

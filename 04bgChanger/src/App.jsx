@@ -1,19 +1,35 @@
 import { useState } from 'react'
 import './App.css'
+import './index.css'
 
 function App() {
-  const [color, setColor] = useState("olive")
+  const [color, setColor] = useState("olive");
+  
+ 
 
   return (
-      <div className="w-full h-screen duration-200" style={{ backgroundColor: color }}>
-        <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2">
-          <div className="flex flex-wrap justify-center gap-3 shadow-lg bg-white px-3 py-2 rounded-3xl">
-            <button
-              onClick={() => setColor("red")} 
-              className="outline-none px-4 py-1 rounded-full text-white shadow-lg" 
-              style={{ backgroundColor: "red" }} > Red </button>
+      <div className = " full" style={{backgroundColor : color}} >
+        <div className='buttons'>
+        <button className='btn '  style={{backgroundColor : "red"}} onClick = {() => setColor("red")}>
+          Red
+        </button>
 
-          </div>
+        <button className='btn'  style={{backgroundColor : "green"}} onClick = {() => setColor("green")}>
+          Green
+        </button>
+
+        <button className='btn'  style={{backgroundColor : "pink"}} onClick = {() => setColor("pink")}>
+          pink
+        </button>
+        <button className='btn'  style={{backgroundColor : "yellow"}} onClick = {() => setColor("yellow")}>
+          yellow
+        </button>
+        <button className='btn'  style={{backgroundColor : "blue"}} onClick = {() => setColor("blue")}>
+          blue
+        </button>
+        <button className='btn'  style={{backgroundColor : "orange"}} onClick = {() => setColor("orange")}>
+          orange
+        </button>
         </div>
       </div>
 
