@@ -4,9 +4,9 @@ function Counter(){
     const [number , setNumber] = useState(0);
 
     function increment(){
-        setNumber(number => number +1)
-        setNumber(number => number +1)
-        setNumber(number => number +1)
+        setNumber(number +1)
+        setNumber( number +4)
+        setNumber( number +6)
         // setNumber(number +1)
 
         // setTimeout(()=>{
