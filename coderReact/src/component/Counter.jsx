@@ -4,10 +4,14 @@ function Counter(){
     const [number , setNumber] = useState(0);
 
     function increment(){
-        setNumber(number +1)
-        setNumber( number +4)
-        setNumber( number +6)
         // setNumber(number +1)
+        // setNumber( number +4)
+        // setNumber( number +6)
+
+        setNumber(prev => prev +1)
+        setNumber(prev => prev +2)
+        setNumber(prev => prev +3)
+        setNumber(prev => prev +4)
 
         // setTimeout(()=>{
         //     setNumber(number => number+1)
