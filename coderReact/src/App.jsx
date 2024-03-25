@@ -5,11 +5,13 @@ import Play from './component/Play'
 import Counter from './component/Counter'
 import { useState } from 'react'
 function App() {
-  const [videos, setVideo] = useState(Data.slice(0,3))
+
+  const [videos, setVideo] = useState(Data.slice(0,3))   //first 3 objects from Data array are store in variable videos
+
   function addVideo(){
     for(let i = videos.length; i< Data.length   ;i++)
     {
-      setVideo([...videos , Data[videos.length] ])
+      setVideo([...videos , Data[videos.length] ]) // on each click next obejct of data array is added to the videos array
     }
   }
 
@@ -21,7 +23,7 @@ function App() {
       <div className='component'>
         {
           videos.map((video) => {
-            return <Video {...video} >
+            return <Video {...video} > 
               <Play onPlay={() => console.log("Playing " + video.title)} onPause={() => console.log("paused " + video.title)}>{"play " + video.title} </Play>
             </Video>
           })
