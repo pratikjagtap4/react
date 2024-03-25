@@ -1,6 +1,8 @@
 import "./video.css"
 function Video({ title , channel = "Chai Aur Code" , link , views , children,verified}) {
 
+    console.log("render Video" )
+
     // let verified = true;
     // let channelName;
     // if(verified){

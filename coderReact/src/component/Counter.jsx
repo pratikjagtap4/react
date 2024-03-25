@@ -1,12 +1,13 @@
 import { useState } from "react";
 function Counter(){
+    console.log("render counter")
     const [number , setNumber] = useState(0);
 
     function increment(){
-        // setNumber(number => number +1)
-        // setNumber(number => number +1)
-        // setNumber(number => number +1)
-        setNumber(number +1)
+        setNumber(number => number +1)
+        setNumber(number => number +1)
+        setNumber(number => number +1)
+        // setNumber(number +1)
 
         // setTimeout(()=>{
         //     setNumber(number => number+1)

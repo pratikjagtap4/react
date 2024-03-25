@@ -4,6 +4,7 @@ import Data from './data'
 import Play from './component/Play'
 import Counter from './component/Counter'
 function App() {
+  console.log("render App")
   return (
     <>
       <div className='component'>

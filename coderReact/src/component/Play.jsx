@@ -1,15 +1,19 @@
 import "./Play.css"
+import { useState } from "react";
 function Play({onPlay ,onPause , children}){
-    let playing = false ;
+    console.log("render Play")
+
+    let [state,setState ]= useState(false) ;
+
     function handleClick(){
-        if(playing) onPause();
+        if(state) onPause();
         else onPlay();
 
-        playing = !playing
+        setState(!state)
     }
 
     return(
-        <button onClick={handleClick}>{children} </button>
+        <button onClick={handleClick}>{children}{state ? "⏸️" : "▶️"} </button>
     )
 }
 export default Play;
