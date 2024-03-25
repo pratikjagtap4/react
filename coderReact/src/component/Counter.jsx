@@ -3,10 +3,14 @@ function Counter(){
     const [number , setNumber] = useState(0);
 
     function increment(){
+        // setNumber(number => number +1)
+        // setNumber(number => number +1)
+        // setNumber(number => number +1)
         setNumber(number +1)
-        setNumber(number +1)
-        setNumber(number +1)
-        setNumber(number +1)
+
+        // setTimeout(()=>{
+        //     setNumber(number => number+1)
+        // }, 2000)
         console.log(number)
     }
 
