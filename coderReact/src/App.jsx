@@ -22,9 +22,9 @@ function App() {
     </div>
       <div className='component'>
         {
-          videos.map((video) => {
-            return <Video {...video} > 
-              <Play onPlay={() => console.log("Playing " + video.title)} onPause={() => console.log("paused " + video.title)}>{"play " + video.title} </Play>
+          videos.map((vid) => {
+            return <Video {...vid} > 
+              <Play onPlay={() => console.log("Playing " + vid.title)} onPause={() => console.log("paused " + vid.title)}>{"play " + vid.title} </Play>
             </Video>
           })
         }
