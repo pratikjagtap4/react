@@ -4,6 +4,9 @@ function Counter(){
 
     function increment(){
         setNumber(number +1)
+        setNumber(number +1)
+        setNumber(number +1)
+        setNumber(number +1)
         console.log(number)
     }
 
