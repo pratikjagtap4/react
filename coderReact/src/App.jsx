@@ -1,16 +1,31 @@
 import './App.css'
 import Video from "./component/Video"
+import Data from './data'
 
 function App() {
+
+  
+
   return (
     <>
-      <div className='component'>hello
+      <div className='component'>
+      {
+        Data.map((video) =>
+        {
+         return <Video {... video} ></Video>
+          
 
-        <Video title="React Tutoial" link="https://www.patterns.dev/img/reactjs/react-logo@3x.svg" ></Video>
-        <Video title="Java tutorial" link="https://ccesc.mapua.edu.ph/images/thumbnails/JavaProgramming.png"></Video>
+        })
+      }
+        
       </div>
     </>
   )
 }
-
+   
 export default App;
+
+
+{/* <Video {... React}>Learn react in Fun way</Video>
+    <Video {... Java}  >Chai Ready To code bhi Ready hai</Video>
+    <Video {... MongoDb} > please Subscribe Guyts</Video> */}

@@ -1,6 +1,11 @@
-img{
+.img{
     width: 200px;
-    height: 200px;
-    float: left;
+    height:200px;
+    /* float: left; */
 }
 
+.info{
+   display: grid; 
+   grid-template-columns: 3;
+   grid-gap: 20px;
+}
