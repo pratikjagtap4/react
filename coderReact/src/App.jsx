@@ -1,24 +1,26 @@
 import './App.css'
 import Video from "./component/Video"
-import Data from './data'
+import videos from './data'
 import Play from './component/Play'
 import Counter from './component/Counter'
+import AddVideo from './component/AddVideo'
 import { useState } from 'react'
 function App() {
 
-  const [videos, setVideo] = useState(Data.slice(0,3))   //first 3 objects from Data array are store in variable videos
+  // const [videos, setVideo] = useState(Data.slice(0,3))   //first 3 objects from Data array are store in variable videos
 
-  function addVideo(){
-    for(let i = videos.length; i< Data.length   ;i++)
-    {
-      setVideo([...videos , Data[videos.length] ]) // on each click next obejct of data array is added to the videos array
-    }
-  }
+  // function addVideo(){
+  //   for(let i = videos.length; i< Data.length   ;i++)
+  //   {
+  //     setVideo([...videos , Data[videos.length] ]) // on each click next obejct of data array is added to the videos array
+  //   }
+  // }
 
   return (
     <>
     <div>
-      <button onClick={addVideo}>Add Video</button>
+      {/* <button onClick={addVideo}>Add Video</button> */}
+      <AddVideo></AddVideo>
     </div>
       <div className='component'>
         {
