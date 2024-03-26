@@ -2,6 +2,7 @@ import "./Play.css"
 import { useState } from "react";
 
 function Play({onPlay ,onPause , children}){
+    
     // console.log("render Play")
 
     let [state,setState ]= useState(false) ;
