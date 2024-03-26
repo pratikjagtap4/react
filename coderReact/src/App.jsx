@@ -3,8 +3,8 @@ import Video from "./component/Video"
 import Data from './data'
 import Play from './component/Play'
 import Counter from './component/Counter'
-import AddVideo from './component/AddVideo'
 import { useState } from 'react'
+import AddVideo from './component/AddVideo'
 function App() {
 
   const [videos, setVideo] = useState(Data)   //first 3 objects from Data array are store in variable videos
@@ -17,15 +17,13 @@ function App() {
   // }
 
 
-  function addVideo(video){
-    setVideo([... videos , {... video , key : (videos.length+1)} ])
-  }
+
 
   return (
     <>
     <div>
       {/* <button onClick={addVideo}>Add Video</button> */}
-      <AddVideo onAddVideo = {addVideo}></AddVideo>
+      <AddVideo ></AddVideo>
     </div>
       <div className='component'>
         {
