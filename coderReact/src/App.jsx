@@ -1,10 +1,8 @@
 import './App.css'
-import Video from "./component/Video"
 import Data from './data'
-import Play from './component/Play'
-import Counter from './component/Counter'
 import { useState } from 'react'
 import AddVideo from './component/AddVideo'
+import VideoList from './component/VideoList'
 
 function App() {
   console.log("render app")
@@ -28,19 +26,9 @@ function App() {
     <div>
       {/* <button onClick={addVideo}>Add Video</button> */}
       <AddVideo  onAddVideo = {addNewVideo}></AddVideo>
+      <VideoList videos ={videos}></VideoList>
     </div>
-      <div className='component'>
-        {
-          videos.map((vid) => {
-            return <Video {...vid} > 
-              <Play onPlay={() => console.log("Playing " + vid.title)} onPause={() => console.log("paused " + vid.title)}>{"play " + vid.title} </Play>
-            </Video>
-          })
-        }
-      </div>
-      {/* <Play onPlay = {()=>console.log("play ")} onPause = {()=>console.log("pause ")}>Play </Play> */}
-      {/* <Play onClick = {()=>console.log("Pause button is clicked")}>Pause</Play> */}
-      <Counter></Counter>
+      
     </>
   )
 }
