@@ -16,17 +16,21 @@ function App() {
   //   }
   // }
   function addNewVideo(video){
-    setVideo([... videos , {...video , key : videos.length+1} ])
+    setVideo([... videos , {...video , id : videos.length+1} ])
   }
 
-
+  function deleteVideo(key)
+  {
+    setVideo(videos.filter((video)=>video.id !==key))
+    console.log("delete video" + key )
+  }
 
   return (
     <>
     <div>
       {/* <button onClick={addVideo}>Add Video</button> */}
       <AddVideo  onAddVideo = {addNewVideo}></AddVideo>
-      <VideoList videos ={videos}></VideoList>
+      <VideoList onDeleteVideo ={deleteVideo} videos ={videos}></VideoList>
     </div>
       
     </>

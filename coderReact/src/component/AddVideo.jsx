@@ -10,7 +10,8 @@ function AddVideo({ onAddVideo }) {
         views: "",
         link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFZfFIjJBgO_k3yOPYbpYs5XDQXMmxK8Z_LzmsZ8-sgw&s",
         verified: false,
-        key : ""
+        key : "",
+        id:""
     }
     const [video, setVideo] = useState(initialState)
 
@@ -22,7 +23,7 @@ function AddVideo({ onAddVideo }) {
 
     function handleChange(e) {
         // addVideo({...video , [e.target.name] : e.target.value})
-        setVideo({ ...video, [e.target.name]: e.target.value })
+        setVideo({ ...video, [e.target.name]: e.target.value  })
     }
 
     return (

@@ -5,7 +5,9 @@ const Data = [
     views: "50k", 
     link:"https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-svg-vector.svg",
     verified : false,
-    key: 1
+    // id:""
+    key: 1,
+    id:1
     
   },
   {
@@ -14,7 +16,9 @@ const Data = [
     views : "200k",
     link : "https://1000logos.net/wp-content/uploads/2020/09/Java-Emblem.jpg",
     verified : true,
-    key : 2
+    // id:""
+    key : 2,
+    id:2
   },
   {
     title : "MongoDb tutorial",
@@ -22,7 +26,8 @@ const Data = [
     views : "10k",
     link:"https://miro.medium.com/v2/resize:fit:512/1*doAg1_fMQKWFoub-6gwUiQ.png",
     verified : false ,
-    key :3
+    key :3,
+    id:3
   },
   // {
   //   title : "HTML Tutorial",
