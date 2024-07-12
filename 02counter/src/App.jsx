@@ -5,7 +5,7 @@ import './App.css'
 
 function App() {
 let [counter , setCounter] = useState(10)
-const addValue =  () =>{
+const addValue =  () => {
     // counter = counter +1;
     console.log("value of counter is: " , counter)
     setCounter((prevCounter) => prevCounter + 1)
