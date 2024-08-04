@@ -1,9 +1,9 @@
 import React from "react";
 
-function Card ({userdetails =[]}) {
+function Card({ greeting, userdetails }) {
     // const {username , age , followers , country} = userdetails
     // console.log({userdetails = {} })
-        return (
+    return (
         <>
             <div className="w-[300px] rounded-md border">
                 <img
@@ -13,7 +13,7 @@ function Card ({userdetails =[]}) {
                 />
                 <div className="p-4">
                     <h1 className="inline-flex items-center text-lg font-semibold">
-                        {userdetails[0]}
+                        {userdetails.username}
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -31,19 +31,18 @@ function Card ({userdetails =[]}) {
                         </svg>
                     </h1>
                     <p className="mt-3 text-sm text-gray-600">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
-                        debitis?
+                        {greeting}
                     </p>
                     <div className="mt-4">
                         <span className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
-                            {/* {userdetails.age} */}
-                        
+                            {userdetails.age}
+
                         </span>
                         <span className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
-                            {/* {userdetails.followers} */}
+                            {userdetails.followers}
                         </span>
                         <span className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
-                            {/* {userdetails.country} */}
+                            {userdetails.country}
                         </span>
                     </div>
                     <button
@@ -54,7 +53,6 @@ function Card ({userdetails =[]}) {
                     </button>
                 </div>
             </div>
-f
         </>
     )
 }
