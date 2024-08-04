@@ -1,19 +1,21 @@
+import { useRef } from "react";
 
 function InputBox({
     label,
     amount,
     onAmountChange,
     selectedCurrency = "usd",
-    options = [],
     onCurrencyChange,
-    className = "",
+    currencyOptions = [],
+    isDisable = false
 }) {
+    const inputRef = useRef()
 
 
     return (
         <div className={`bg-white p-3 rounded-lg text-sm flex `}>
             <div className="w-1/2">
-                <label className="text-black/40 mb-2 inline-block">
+                <label className="text-black/80 mb-2 inline-block">
                     {label}
                 </label>
                 <input
@@ -21,7 +23,9 @@ function InputBox({
                     type="number"
                     placeholder="Amount"
                     value={amount}
+                    ref={inputRef}
                     onChange={(e) => onAmountChange && onAmountChange(e.target.value)}
+                    disabled={isDisable}
                 />
             </div>
             <div className="w-1/2 flex flex-wrap justify-end text-right">
@@ -32,8 +36,10 @@ function InputBox({
                     onChange={(e) => onCurrencyChange && onCurrencyChange(e.target.value)}
                 >
                     {
-                        options.map(currency => <option key={currency} value={currency}> {currency}</option>)
+                        currencyOptions.map(currency => <option key={currency} value={currency}>{currency}</option>)
                     }
+
+
                 </select>
             </div>
         </div>
