@@ -1,20 +1,25 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import './App.css'
-import InputBox from './components/InputBox';
-import useCurrencyInfo from './hooks/useCurrencyHook';
-
+import { InputBox } from './components';
+import useCurrencyinfo from './hooks/useCurrencyInfo';
 function App() {
-  const [amount, setAmount] = useState(0)
-  const [convertedAmount, setConvertedAmount] = useState(0)
-  const [from, setFrom] = useState("usd");
-  const [to, setTo] = useState("inr");
 
-  const currencyInfo = useCurrencyInfo(from);
-  const options = Object.keys(currencyInfo)
+  const [amount, setAmount] = useState()
+  const [convAmount, setConvAmount] = useState()
+  const [from, setFrom] = useState("usd")
+  const [to, setTo] = useState("inr")
 
+  const currencyInfo = useCurrencyinfo(from);
+
+  function swap() {
+    setFrom(to)
+    setTo(from)
+    setAmount(convAmount)
+    setConvAmount(amount)
+  }
 
   function convert() {
-    setConvertedAmount(amount * 83)
+    setConvAmount(amount * Number(currencyInfo[to]))
   }
   return (
     <div
@@ -31,32 +36,33 @@ function App() {
           >
             <div className="w-full mb-1">
               <InputBox
-                label="From"
+                label="from"
                 isDisable={false}
                 amount={amount}
                 onAmountChange={(amount) => setAmount(amount)}
                 selectedCurrency={from}
                 onCurrencyChange={(currency) => setFrom(currency)}
-                currencyOptions={options}
+                currencyInfo={currencyInfo}
               />
             </div>
             <div className="relative w-full h-0.5">
               <button
                 type="button"
                 className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white rounded-md bg-blue-600 text-white px-2 py-0.5"
+                onClick={swap}
               >
                 swap
               </button>
             </div>
             <div className="w-full mt-1 mb-4">
               <InputBox
-                label="To"
+                label="to"
                 isDisable={true}
-                amount={convertedAmount}
-                onAmountChange={(amount) => setConvertedAmount(amount)}
+                amount={convAmount}
+                onAmountChange={(amount) => setConvAmount(amount)}
                 selectedCurrency={to}
                 onCurrencyChange={(currency) => setTo(currency)}
-                currencyOptions={options}
+                currencyInfo={currencyInfo}
               />
             </div>
             <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">
