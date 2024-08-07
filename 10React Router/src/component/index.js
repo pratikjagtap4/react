@@ -5,4 +5,5 @@ import AboutUs from "./AboutUs";
 import Contact from "./Contact";
 import Education from "./Education";
 import Projects from "./Projects";
-export { Header, Home, Footer, AboutUs, Contact, Education, Projects };
+import User from "./User";
+export { Header, Home, Footer, AboutUs, Contact, Education, Projects, User };
