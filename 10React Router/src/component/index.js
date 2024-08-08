@@ -6,4 +6,15 @@ import Contact from "./Contact";
 import Education from "./Education";
 import Projects from "./Projects";
 import User from "./User";
-export { Header, Home, Footer, AboutUs, Contact, Education, Projects, User };
+import { GitInfoLoader } from "./GitHubInfoLoader";
+export {
+  Header,
+  Home,
+  Footer,
+  AboutUs,
+  Contact,
+  Education,
+  Projects,
+  User,
+  GitInfoLoader,
+};

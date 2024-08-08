@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-import { AboutUs, Home, Contact, Education, Projects, User } from './component/index.js'
+import { AboutUs, Home, Contact, Education, Projects, User, GitInfoLoader } from './component/index.js'
+
 
 
 
@@ -31,12 +32,13 @@ import { AboutUs, Home, Contact, Education, Projects, User } from './component/i
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path='' element={<AboutUs />} />
-      <Route path='Contact' element={<Contact />} >
-        <Route path='/Contact/user' element={<User />} />
+      <Route path='' element={<AboutUs />} loader={GitInfoLoader} >
+        <Route path='/home' element={<Home />}></Route>
       </Route>
+      <Route path='Contact' element={<Contact />} />
       <Route path='Education' element={<Education />} />
       <Route path='Projects' element={<Projects />} />
+      <Route path='user/:id' element={<User />} />
     </Route>
   )
 )

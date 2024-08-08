@@ -1,6 +1,9 @@
 import { FaTwitter, FaLinkedin, FaGithub, FaFacebook, FaInstagramSquare } from "react-icons/fa";
-import { Link } from "react-router-dom"
+
+import { SiHackerrank } from "react-icons/si";
+import { Link, useLoaderData } from "react-router-dom"
 export default function About() {
+    const data = useLoaderData()
     return (
         <div className="py-16 bg-white">
             <div className="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
@@ -8,10 +11,10 @@ export default function About() {
                     <div className="md:5/12 lg:w-5/12">
                         <img
                             className="rounded-full"
-                            src="./src/assets/profile.jpeg"
+                            src={`${data.avatar_url}`}
                             alt="image"
                         />
-                        <div className="flex mt-5 space-x-5 sm:justify-center sm:mt-0">
+                        <div className="flex mt-5 space-x-5 sm:justify-center sm:mt-0 w-4/5">
                             <Link to="#" className="text-gray-500 hover:text-gray-900">
                                 <FaFacebook size={25} />
 
@@ -29,6 +32,9 @@ export default function About() {
                             </Link>
                             <Link to="#" className="text-gray-500 hover:text-gray-900">
                                 <FaInstagramSquare size={25} />
+                            </Link>
+                            <Link to="#" className="text-gray-500 hover:text-gray-900">
+                                <SiHackerrank size={25} />
                             </Link>
                         </div>
                     </div>
